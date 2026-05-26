@@ -3,12 +3,10 @@
 
 /// Pico SDK headers - supplied with arduino-pico core
 
-#ifndef ARDUINO_PICO_VERSION_STR
-#if PICO_RP2350
+#if PICO_RP2350 && !defined(ARDUINO_PICO_VERSION_STR)
 #include "RP2350.h" // hw_set_bits
-#else
+#elif !defined(ARDUINO_PICO_VERSION_STR)
 #include "RP2040.h"
-#endif
 #endif
 
 #include "hardware/regs/dreq.h" // DREQ_PIO0_RX1
